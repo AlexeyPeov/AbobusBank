@@ -1,4 +1,4 @@
-<h1> INDEX </h1>
+<h1> Abobus Bank </h1>
 
 <table>
   <thead>
@@ -19,8 +19,8 @@
     <td>  <%= @account.age  %> </td>
     <td>  <%= @account.balance  %> </td>
 
-    <td> <%= link_to "edit", @account %> </td>
-    <td> <%= link_to "destroy", @account , method: :delete , data:{ confirm: "Are you sure?" }%> </td>
+    <td> <%= link_to "edit" , edit_account_path(@account.id)  %> </td>
+    <td> <%= button_to "destroy", @account , method: :delete , data:{ confirm: "Are you sure?" }%> </td>
 
 
   </tr>
@@ -31,3 +31,30 @@
 
 
 </table>
+
+
+<%= form_with(model: @account) do |form| %>
+
+
+<!--  <form>-->
+<!--    <label for="action">Chose action:</label><br>-->
+<!--    <input type="number" id="action" name="num"><br>-->
+<!--    <input type="submit" id = "deposit" value="Deposit">  </input> <input type="submit" id = "withdraw" value="Withdraw">-->
+
+<!--  </form>-->
+
+
+<!--  <div class = "fields">-->
+    <%= form.label "Deposit" %>
+    <%= form.number_field :balance %>
+<!--  </div>-->
+  <div class = "actions">
+    <%= form.submit "Deposit"%> <%= form.submit "Withdraw"%>
+  </div>
+  <div class = "actions">
+
+  </div>
+
+<% end %>
+
+

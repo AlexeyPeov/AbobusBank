@@ -1,12 +1,32 @@
-<h1> NEW </h1>
+<h1> Create account </h1>
 
 
-<%= form_for @account do |f| %>
-  First name: <%= f.text_field :firstName %><br />
-  Last name : <%= f.text_field :secondName %><br />
-  Age : <%= f.number_field :age %><br />
-  <%= f.submit %>
+<%= form_with(model: @account) do |form| %>
+  <div class = "fields">
+    <%= form.label :firstName %>
+    <%= form.text_field :firstName %>
+  </div>
+
+  <div class = "fields">
+    <%= form.label :secondName %>
+    <%= form.text_field :secondName %>
+  </div>
+
+  <div class = "fields">
+    <%= form.label :age %>
+    <%= form.number_field  :age %>
+  </div>
+  <div class = "actions">
+    <%= form.submit "Create"%>
+  </div>
+
+
+
+
 <% end %>
+<div>
+  <%=  puts @account %>
+</div>
 
 
 <%#= form_for @account, url: accounts_path do |f| %>

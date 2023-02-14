@@ -1,1 +1,22 @@
 <h1> EDIT </h1>
+
+<%= form_with(model: @account) do |form| %>
+  <div class = "fields">
+    <%= form.label :firstName %>
+    <%= form.text_field :firstName %>
+  </div>
+
+  <div class = "fields">
+    <%= form.label :secondName %>
+    <%= form.text_field :secondName %>
+  </div>
+
+  <div class = "fields">
+    <%= form.label :age %>
+    <%= form.text_field :age %>
+  </div>
+  <div class = "actions">
+    <%= form.submit "Change"%>
+  </div>
+
+<% end %>
