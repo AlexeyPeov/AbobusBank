@@ -53,9 +53,12 @@ class AccountsController < ApplicationController
     @account = Account.find(params[:id])
     if @account.update(account_params)
 
-      @account.update(balance: (@account.balance + 12)) if deposit?
-      @account.update(balance: (@account.balance - 12)) if withdraw?
-      flash[:notice] = "Update success"
+      @account.update(balance: (@account.balance + @account.input)) if deposit?
+      @account.update(balance: (@account.balance - @account.input)) if withdraw?
+
+      @account.update(input: 0)
+
+      flash[:notice] = "Great success"
       redirect_to accounts_path
     else
       render :edit
@@ -78,6 +81,6 @@ class AccountsController < ApplicationController
   end
 
   def account_params
-    params.require(:account).permit(:firstName, :secondName, :age, :balance)
+    params.require(:account).permit(:firstName, :secondName, :age, :balance, :input)
   end
 end

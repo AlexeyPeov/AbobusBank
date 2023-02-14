@@ -33,6 +33,8 @@
 </table>
 
 
+
+
 <%= form_with(model: @account) do |form| %>
 
 
@@ -46,7 +48,7 @@
 
 <!--  <div class = "fields">-->
     <%= form.label "Deposit" %>
-    <%= form.number_field :balance %>
+    <%= form.number_field :input %>
 <!--  </div>-->
   <div class = "actions">
     <%= form.submit "Deposit"%> <%= form.submit "Withdraw"%>

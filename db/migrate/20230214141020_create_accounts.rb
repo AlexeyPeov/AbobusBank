@@ -5,6 +5,7 @@ class CreateAccounts < ActiveRecord::Migration[7.0]
       t.string :secondName
       t.string :age
       t.float :balance, default: 0
+      t.float :input, default: 0
 
       t.timestamps
     end

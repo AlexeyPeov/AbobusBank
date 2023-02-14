@@ -1,12 +1,35 @@
 <!DOCTYPE html>
 <html>
+
+  <p><% if user_signed_in?  %>
+      <%= button_to "Sign out" , destroy_user_session_path, method: :delete %>
+    <% end %></p>
+
+
   <head>
-    <title>AbobusBank</title>
+    <title>Abobus Bank</title>
+
+    <style>
+        img.background {
+            position: absolute;
+            left: 915px;
+            top: 65px;
+            z-index: -111;
+            width: 13%;
+            height: 23%;
+            -webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
+            filter: blur(0px);
+        }
+    </style>
+
+    <img class="background" <%= image_tag("moneyGuy.png") %>
+
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <!-- Minified version -->
     <link rel="stylesheet" href="https://unpkg.com/simpledotcss/simple.min.css">
+
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
@@ -14,9 +37,6 @@
   <body>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
-<% if user_signed_in?  %>
-  <%= link_to "Sign out" , destroy_user_session_path, method: :delete %>
-  <% end %>
 
 
   <%= yield %>

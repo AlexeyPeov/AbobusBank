@@ -15,7 +15,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_14_171716) do
     t.string "firstName"
     t.string "secondName"
     t.string "age"
-    t.float "balance"
+    t.float "balance", default: 0.0
+    t.float "input", default: 0.0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
