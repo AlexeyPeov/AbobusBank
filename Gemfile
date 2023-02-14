@@ -15,6 +15,8 @@ gem "mysql2", "~> 0.5"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
+gem 'devise', '~> 4.8', '>= 4.8.1'
+
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
 
@@ -54,6 +56,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'letter_opener', '~> 1.8', '>= 1.8.1'
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 

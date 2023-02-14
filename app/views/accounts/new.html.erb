@@ -1,1 +1,47 @@
 <h1> NEW </h1>
+
+
+<%= form_for @account do |f| %>
+  First name: <%= f.text_field :firstName %><br />
+  Last name : <%= f.text_field :secondName %><br />
+  Age : <%= f.number_field :age %><br />
+  <%= f.submit %>
+<% end %>
+
+
+<%#= form_for @account, url: accounts_path do |f| %>
+  <%# if @account.errors.any? %>
+<!--    <div id="errorExplanation">-->
+<!--      <h2><%#= pluralize(@account.errors.count, "error") %> prohibited-->
+<!--        this post from being saved:</h2>-->
+<!--      <ul>-->
+        <%# @account.errors.full_messages.each do |msg| %>
+<!--          <li><%#= msg %></li>-->
+        <%# end %>
+<!--      </ul>-->
+<!--    </div>-->
+  <%# end %>
+<!--  <p>-->
+<!--    <%#= f.label :firstName %><br>-->
+    <%#= f.text_field :firstName %>
+<!--  </p>-->
+
+<!--  <p>-->
+<!--    <%#= f.label :secondName %><br>-->
+    <%#= f.text_field :secondName %>
+<!--  </p>-->
+
+<!--  <p>-->
+<!--    <%#= f.label :age %><br>-->
+    <%#= f.number_field :age %>
+<!--  </p>-->
+
+<!--  <p>-->
+<!--    <%#=f.label :save %><br>-->
+    <%#= f.submit %>
+
+<!--  </p>-->
+<%# end %>
+
+<% #@account.save #redirect_to "accounts#edit" %>
+

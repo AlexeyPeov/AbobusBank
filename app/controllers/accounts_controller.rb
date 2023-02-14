@@ -1,16 +1,23 @@
 class AccountsController < ApplicationController
+
+  def index
+    if current_user.account != nil
+    @account = current_user.account
+    else
+      new
+    end
+  end
+
   def show
-    @account = Account.find(params[:id])
+    @account = current_user.account
   end
 
   def new
+    if current_user.account == nil
     @account = Account.new
-    @account.firstName = "ASAADA"
-    @account.secondName = "ASAADA"
-    @account.age = 12
-    @account.balance = 32932
-    @account.save
-
+    else
+      redirect_to accounts_path
+    end
   end
 
   def edit
@@ -22,6 +29,8 @@ class AccountsController < ApplicationController
   end
 
   def destroy
-    Account.destroy(params[:id])
+    @account = Account.find(params[:id])
+    @account.destroy
+    redirect_to user_session_path
   end
 end
